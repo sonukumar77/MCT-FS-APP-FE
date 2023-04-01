@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
 
+const BASE_URL="https://mct-fs-app.up.railway.app";
+
 const Product = () => {
   const [category, setCategory] = useState("electronics");
   const [categoryData, setCategoryData] = useState([]);
@@ -13,7 +15,7 @@ const Product = () => {
 
   useEffect(() => {
     const fetchCategory = async() => {
-        const res = await fetch(`${process.env.REACT_APP_BASE_URL}/product/category/${category}`);
+        const res = await fetch(`${BASE_URL}/product/category/${category}`);
         const data = await res.json()
         setCategoryData(data.products);
       
@@ -23,7 +25,7 @@ const Product = () => {
 
   useEffect(() => {
     const fetchAllCategory = async() => {
-        const res = await fetch(`${process.env.REACT_APP_BASE_URL}/category`);
+        const res = await fetch(`${ BASE_URL}/category`);
         const data = await res.json()
         setCategoryArr(data.categories);
       
