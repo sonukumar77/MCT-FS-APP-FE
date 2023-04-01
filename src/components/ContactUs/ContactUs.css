@@ -1,0 +1,12 @@
+.contactUs-container{
+
+        width: 100%;
+        height: 90%;
+        /* border: 3px solid green; */
+        padding: 2rem 1rem ;
+}
+.contactUs-container>h1{
+
+text-align: center;
+color: var(--danger);
+}

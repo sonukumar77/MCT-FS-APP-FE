@@ -1,0 +1,109 @@
+
+.login-container{
+    border: 2px solid var(--gray);
+    width: 80vw;
+   height: 80vh;
+   display: flex;
+   margin: 4rem auto;
+   border-radius: var(--border-radius5);
+}
+.login-left{
+    /* border: 2px solid rgb(74, 218, 30); */
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+}
+.login-left header{
+    /* border: 2px solid rgb(74, 218, 30); */
+    height: 30%;
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: column;
+   gap: 1rem;
+   padding: 1rem;
+}
+.login-left form{
+    /* border: 2px solid rgb(74, 218, 30); */
+    height: 70%;
+   padding: 1rem;
+   
+}
+.login-left form .input-container{
+    width: 100%;
+    margin: 0.5rem 0;
+    
+}
+.login-left form .input-container>label{
+
+}
+.login-left form .input-container input[type="text"],input[type="password"]{
+ width: 100%;
+ padding: 1rem;
+ /* border: 2px solid rgb(74, 218, 30); */
+margin: 0.5rem 0;
+font-size: 1.3rem;
+}
+.login-left form .input-container>input[type="checkbox"]{
+    padding: 1rem;
+    font-size: 2rem;
+
+}
+.col{
+    display: flex;
+   padding: 0.5rem 1;
+}
+.inline-text-container{
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+}
+.btn-container{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+.login{
+    background-color: var(--primary);
+    color: var(--light);
+    transition: all 0.3s ease-in;
+    
+}
+.login:hover{
+    background-color: var(--light);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.create-account{
+    background-color: var(--light);
+    color:  var(--primary);
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease-in;
+}
+.create-account:hover{
+    background-color: var(--primary);
+    color:  var(--light);
+  
+}
+
+
+
+.c-primary{
+    color: var(--primary);
+    margin: 0.2rem 0;
+    font-weight: bold;
+}
+
+
+.login-right{
+    border: 2px solid rgb(25, 0, 255);
+    width: 50%;
+   height: 100%;
+}
+.login-right>img{
+    width: 100%;
+   height: 100%;
+}
+

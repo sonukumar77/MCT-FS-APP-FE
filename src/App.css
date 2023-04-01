@@ -1,0 +1,7 @@
+.app-container{
+    width: 100vw;;
+    height: auto;
+    /* border: 3px solid red; */
+    display: flex;
+    flex-direction: column;
+}
