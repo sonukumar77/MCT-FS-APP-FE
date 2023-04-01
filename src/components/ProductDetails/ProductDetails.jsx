@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
+
+const BASE_URL = "https://mct-fs-app.up.railway.app";
+
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
-//   const { cat, _id } = useParams();
-  const {  _id } = useParams();
+  //   const { cat, _id } = useParams();
+  const { _id } = useParams();
 
   useEffect(() => {
     const fetchCategory = async () => {
-      const res = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/product/${_id}`
-      );
+      const res = await fetch(`${BASE_URL}/product/${_id}`);
       const data = await res.json();
       setProduct(data.product);
     };
     fetchCategory();
   }, [_id]);
-
 
   return (
     <div className="prduct-details-container">
