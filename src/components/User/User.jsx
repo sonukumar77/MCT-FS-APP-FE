@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "./User.css";
+
+const BASE_URL="https://mct-fs-app.up.railway.app";
+
 const User = () => {
   const [radioValue, setRadioValue] = useState("all");
   const [products, setProducts] = useState([]);
@@ -7,7 +10,7 @@ const User = () => {
   useEffect(() => {
     const fetchCategory = async () => {
       const res = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/user/gender/${radioValue}`
+        `${BASE_URL}/user/gender/${radioValue}`
       );
       const data = await res.json();
       setProducts(data.users);
