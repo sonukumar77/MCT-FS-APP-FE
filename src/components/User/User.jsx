@@ -6,16 +6,22 @@ const BASE_URL="https://mct-fs-app.up.railway.app";
 const User = () => {
   const [radioValue, setRadioValue] = useState("all");
   const [products, setProducts] = useState([]);
+  const  [isLoading,setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCategory = async () => {
+      setIsLoading(true);
       const res = await fetch(
         `${BASE_URL}/user/gender/${radioValue}`
-      );
-      const data = await res.json();
+  );
+
+  const data = await res.json();
       setProducts(data.users);
+      setIsLoading(false);
     };
+
     fetchCategory();
+
   }, [radioValue]);
 
   const radioBtnHandler = (e) => {
@@ -27,6 +33,7 @@ const User = () => {
       <div className="user-wrapper">
         <div className="user-deatail-header">
           <h1>User Detail</h1>
+         
         </div>
         <div className="user-deatail-description">
           <p>
@@ -80,9 +87,11 @@ const User = () => {
               </tr>
             </thead>
             <tbody>
+            {isLoading?<p style={{fontSize:"2rem"}}>Loading...</p>:""}
               {products.map((element) => {
                 return (
                   <tr key={element._id}>
+                   
                     <td>
                       <div className="poster-container">
                         <img
