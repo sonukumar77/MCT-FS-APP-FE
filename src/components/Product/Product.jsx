@@ -50,18 +50,20 @@ const Product = () => {
         </ul>
       </aside>
       <main className="product-listing-container">
-      {isLoading?<p style={{fontSize:"2rem"}}>Loading...</p>:""}
-        <ul className="product-list">
-        {categoryData.map((element) => {
-            return (
-              <li key={element._id} className="product-list-item">
-                <Link to={`/productDetails/${category}/${element._id }`} >{element.title}</Link>
-              </li>
-            );
-          })}
-     
-          
-        </ul>
+      {isLoading?<p style={{fontSize:"2rem"}}>Loading...</p>:(
+                <ul className="product-list">
+                {categoryData.map((element) => {
+                    return (
+                      <li key={element._id} className="product-list-item">
+                        <Link to={`/productDetails/${category}/${element._id }`} >{element.title}</Link>
+                      </li>
+                    );
+                  })}
+             
+                  
+                </ul>
+      )}
+
       </main>
     </div>
   );
