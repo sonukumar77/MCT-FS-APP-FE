@@ -5,6 +5,7 @@ import Nav from './components/Nav/Nav';
 import Product from './components/Product/Product';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import User from './components/User/User';
+import Login from './components/Login/Login';
 import {Routes,Route} from "react-router-dom";
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     <div className='app-container'>
     <Nav/>
     <Routes>
-      <Route  path='/' element={<Home />}/>
+     <Route  path='/' element={<Login />}/>
+      <Route  path='/home' element={<Home />}/>
       <Route  path='/products' element={<Product />}/>
       <Route  path='/productDetails/:cat/:_id' element={<ProductDetails />}/>
       <Route  path='/users' element={<User /> }/>
