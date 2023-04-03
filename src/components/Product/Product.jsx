@@ -8,27 +8,30 @@ const Product = () => {
   const [category, setCategory] = useState("electronics");
   const [categoryData, setCategoryData] = useState([]);
   const [categoryArr, setCategoryArr] = useState([]);
-
+  const  [isLoading,setIsLoading] = useState(false);
+  
   const categoryHandler = (e) => {
     setCategory(e.target.innerText);
   };
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchCategory = async() => {
         const res = await fetch(`${BASE_URL}/product/category/${category}`);
         const data = await res.json()
         setCategoryData(data.products);
-      
+        setIsLoading(false);
     }
     fetchCategory();
   },[category]);
 
   useEffect(() => {
     const fetchAllCategory = async() => {
+      setIsLoading(true);
         const res = await fetch(`${ BASE_URL}/category`);
         const data = await res.json()
         setCategoryArr(data.categories);
-      
+        setIsLoading(false);
     }
     fetchAllCategory();
   },[]);
@@ -47,6 +50,7 @@ const Product = () => {
         </ul>
       </aside>
       <main className="product-listing-container">
+      {isLoading?<p style={{fontSize:"2rem"}}>Loading...</p>:""}
         <ul className="product-list">
         {categoryData.map((element) => {
             return (
